@@ -56,6 +56,9 @@
       "type": "fill"
     }
   ],
+  "terrain": {
+    "source": "h"
+  },
   "sources": {
     "v": {
       "attribution": "国土地理院ベクトルタイル提供実験",
@@ -65,6 +68,14 @@
         "https://optgeo.github.io/unite-one/zxy/{z}/{x}/{y}.pbf"
       ],
       "type": "vector"
+    },
+    "h": {
+      "type": "raster-dem",
+      "tiles": [
+        "https://x.optgeo.org/et10b/et512/{z}/{x}/{y}.webp"
+      ],
+      "tileSize": 512,
+      "maxzoom": 13
     }
   },
   "version": 8,
