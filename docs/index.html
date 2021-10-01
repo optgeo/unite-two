@@ -16,6 +16,17 @@ fetch("https://gsi-cyberjapan.github.io/gsivectortile-3d-like-building/building3
   for(layer of style.layers) {
     if (layer.maxzoom >= 17) layer.maxzoom = 24
   }
+  
+  // WEBP 標高タイルを追加する
+  style.sources.h = {
+    maxzoom: 13,
+    minzoom: 3,
+    tileSize: 512,
+    tiles: [
+      "https://x.optgeo.org/et10b/et512/{z}/{x}/{y}.webp"
+    ],
+    type: "raster-dem"
+  }
 
   // 地形分類タイルを追加する
   style.sources.v = {
@@ -103,6 +114,11 @@ fetch("https://gsi-cyberjapan.github.io/gsivectortile-3d-like-building/building3
     type: "sky"
   })
  
+  // 地形を立ち上げる
+  style.terrain = {
+    source: "h"
+  }
+  
   // 霞を入れる
   style.fog = {
     range: [-2, 10],
